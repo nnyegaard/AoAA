@@ -1,0 +1,720 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass article
+\begin_preamble
+\usepackage{listings}
+\end_preamble
+\use_default_options true
+\begin_modules
+customHeadersFooters
+\end_modules
+\maintain_unincluded_children false
+\language danish
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation skip
+\defskip smallskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Section
+Introduktion
+\end_layout
+
+\begin_layout Standard
+Dette kapitel vil introducere Android OSet, samt selve tabletten som bliver
+ udviklet til, samt grunden til dette valg.
+ Desuden vil motivatione, vision og selve problemformuleringen blive præsenteret
+, samt hvilken udviklings metoder der vil blive brugt.
+ 
+\end_layout
+
+\begin_layout Subsection
+Omkring Android
+\end_layout
+
+\begin_layout Standard
+Android er et mobil operativ system hvis kerne er basered på Linux.
+ Det var oprandeligt udviklet af et firma med samme navn, Android Inc i
+ 2005, Android Inc blev opkøbt af Google, som overtog alt udvikling med
+ Android.
+ Google ønsket at Android skulle være gratis, og åbent, så de frigav Android
+ under Apache Licensen, som dermed gjorde at alle kunne hente, og modificere
+ Android hvis de ønsker det.
+ Det betyder at leverandører kunne modificere Android ved at tilføje deres
+ egne lukket tilføjelse til Android, så de kunne distancere sig fra hinanden.
+ Denne forretings model har gjord Android utrolig attraktiv for mange leverandør
+er, specielt dem som er blevet ramt af Apple's iPhone fænomen, som ratikalt
+ ændret folks forventninger til deres telefon.
+ Dem som selv havde udviklet deres eget operativ system, som fx.
+ Motorolo, og Sony Ericsson, kunne dermed med skrotte dette OS, mens de
+ stadig kunne fortsatte med at producere deres egen hardware, og derefter
+ loade det med Android.
+ En af hovedfordellene ved at bruge Android, er at udviklere ikke behøver
+ at lave applikationer til forskellige operativ systemmer, da de bare kan
+ udvikle til Android, og hvis mobil telefonen køre med Android kan den udviklet
+ applikation køre på mobilen.
+\end_layout
+
+\begin_layout Subsubsection
+Omkring Galaxy note 10.1
+\end_layout
+
+\begin_layout Standard
+Samsung Galaxy note 10.1, er en normalt Android tablet på mange punkter,
+ den har en 10.1 tommer stor skærm, og den kommer preloaded med Android 4.0
+ Ice Cream Sandwich.
+ Samsung har dog lavet et twist for at distancere sig selv fra andre producenter
+ af Android tablets, ved at gøre det muligt at bruge en wacom stylus sammen
+ med ens tablet.
+ Dette betyder at folk har større mulighed for at være præcis når de bruger
+ deres tablet, da de nu har en pen i deres hånd som har en meget mindre
+ radius end ens finger, mens det stadig er muligt at bruge ens finger sammen
+ med pennen.
+ Pennen som følger med galaxy note 10.1 er en fuld Wacom digitizer stylus
+ som giver ekstra pricision, samtidig, med at den er tryg følsom.
+ At Samsung har valgt at bruge en Wacom stylus, betyder at man kan udskifte
+ sind pen med andre wacom styluser, som evt.
+ kunne have en anden udforming som passer bedre til ens hånd.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+newpage
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Motivation
+\end_layout
+
+\begin_layout Standard
+Igennem mine studier har jeg altid følt at det var besværeligt at tage noter
+ på papier, da jeg skulle lave en meget stor struktur fordeling, for at
+ kunne bruge disse noter på et senere tidspunkt.
+ Samtidig skulle nye noter indlemes med det samme da jeg ellers ville miste
+ overblikket over dem, samtidig havde jeg ikke mulighed for at 
+\begin_inset Quotes eld
+\end_inset
+
+søge
+\begin_inset Quotes erd
+\end_inset
+
+ i mine noter eller flytte rundt på tekst eller figure på et senere tidspunkt
+ uden jeg skulle omskrive en stor del af notatet.
+ Elektroniske noter har derfor altid været noget som har tiltalt mig, og
+ igennem mit studie ude på DTU ejet en Lenovo x61 tablet laptop, og denne
+ gjorde det muligt for mig at tage noter elektronisk.
+ Dog synes jeg at der er dog en del problemer med disse tablet computere.
+\end_layout
+
+\begin_layout Itemize
+Normalt er deres skærm lille
+\end_layout
+
+\begin_layout Itemize
+De har ikke særlig høje specs - Processor kraft etc
+\end_layout
+
+\begin_layout Itemize
+Har ikke multi touch
+\end_layout
+
+\begin_layout Itemize
+Deres interface er ikke lavet til touch
+\end_layout
+
+\begin_layout Itemize
+De er tunge pga.
+ batteriet, og skærmen
+\end_layout
+
+\begin_layout Itemize
+De er meget dyre
+\end_layout
+
+\begin_layout Standard
+Alle disse ting gjorde at en tablet computere ikke var særlig brugbar til
+ andet end at tage noter, men da jeg også skulle bruge den til at udvikle
+ var det altså ikke en særlig god løsning.
+\end_layout
+
+\begin_layout Standard
+Da tablets da kom på market så jeg det hurtigt som en mulighed for at overtage
+ funktionen 
+\begin_inset Quotes eld
+\end_inset
+
+elektroniske noter
+\begin_inset Quotes erd
+\end_inset
+
+ fra tablet computeren, og da en tablet ikke vejer særlig meget kunne man
+ godt have en normal laptop med samtidig med en tablet til at tage noter
+ på.
+ I mine øjne løser en tablet følgende problemer ved tablet computeren:
+\end_layout
+
+\begin_layout Itemize
+Den har multi touch
+\end_layout
+
+\begin_layout Itemize
+Okay høje specs - Android OSet kræver mindre end fx.
+ Windows
+\end_layout
+
+\begin_layout Itemize
+Den har et interface til multi touch
+\end_layout
+
+\begin_layout Itemize
+Den vejer ikke særlig meget
+\end_layout
+
+\begin_layout Itemize
+De er ikke så dyre
+\end_layout
+
+\begin_layout Standard
+En tablet vil altså løse 5 af de 6 problemer som jeg synes en tablet computer
+ har.
+ Normalt vil en tablet have en lille skærm, men da man skulle bruge den
+ til at udskifte ends papier med, ville en skærm på størrelse med en A4
+ side være nok.
+\end_layout
+
+\begin_layout Subsection
+Vision
+\end_layout
+
+\begin_layout Standard
+Visionen med dette projekt er at skabe en applikation til Samsung Galaxy
+ Note 10.1 tabletten, som vil forbedre oplevelsen af at tage elektroniske
+ noter på Samsung Galaxy Note 10.1 tabletten.
+ Oplevelsen skal være det samme som at ligge et stykke gennemsigtig papier
+ henover det som man har ønsker at tage noter af, og dermed have ens noter
+ vedsiden af det man arbejder med.
+ Dette skulle gerne forbedre oplevelsen af elektroniske noter, samt gøre
+ at man kan udvide ens mulighed for at tage noter af forskellige medier.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Målgruppe
+\end_layout
+
+\begin_layout Standard
+Målgruppen for dette ville dem som har en behov for at tage noter af et
+ stykke medie.
+ Særligt studerne som ønsker at tage noter til fx.
+ en pdf eller en powerpoint ville kunne bruge dette.
+ Det kunne dog også tænkes at folk som fx ser film ville kunne tage noter
+ af den film som køre, så det var muligt at skrive noter til bestemte tidspunkte
+r i en film.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+newpage
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Problemformulering
+\end_layout
+
+\begin_layout Standard
+Ud fra min motivationen, og visionen er det muligt at opstille en problemformule
+ring som vil beskrive mit problem som dette projekt vil løse:
+\end_layout
+
+\begin_layout Itemize
+At udvikle en applikation til Android målrettet mod Samsung Galaxy Note
+ 10.1 tabletten.
+ hvor det er muligt at trække et gennemsigtigt overlay ned over det kørende
+ medie, for på den måde at lave notater som ikke har indflydelse på mediet,
+ men hvor det er lige så let at se ens noter som var noterne skrevet på
+ mediet.
+\end_layout
+
+\begin_layout Standard
+Visuel præsentation af dette:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename img/AOAA_Beskrivelse.png
+	scale 60
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Mockup af design
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+newpage
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Udviklings proces
+\end_layout
+
+\begin_layout Subsubsection
+Behaviour-Driven Development
+\end_layout
+
+\begin_layout Standard
+BDD er en viderudvikling af Test-Driven Development, hvor BDD adskiller
+ sig fra TDD er ved at BDDs omdrejnings punkt er konceptet, en 
+\begin_inset Quotes eld
+\end_inset
+
+story
+\begin_inset Quotes erd
+\end_inset
+
+.
+ En story er en samling af forskellige scenarier som hver især beskriver
+ en konkret funktionalitet af systemet.
+ Hvert scenarie består så af forskellige steps som beskrive de trin en bruger
+ af systemet ville gå igennem.
+ Sammen med en beskrivelse af den givende feature, vil der blive genereret
+ nogle test ud fra beskrivelsen.
+ Det betyder at der kommer sammenhæng mellem beskrivelsen af den ønsket
+ funktionalitet, og den kode som bliver skrevet, som gør at selv ikke tekniske
+ folk, forstår hvad det er programmet skal, og kan gøre, samtidig vil man
+ have en dokumentation som altid er up to-date, samt test af systemet.
+\end_layout
+
+\begin_layout Standard
+BDD vil blive brugt i dette projekt, da BDD har undertegnets interrese,
+ samt at det vil gøre det muligt at genbruge de funktionelle krav til at
+ udføre test af systemet, samt have dokumentation som ville kunne bruges
+ til viderudvikling af projektet.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Kilde: http://behaviour-driven.org/BehaviourDrivenDevelopment
+\end_layout
+
+\begin_layout Plain Layout
+The Cucumber Book - http://pragprog.com/book/hwcuc/the-cucumber-book
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Version styring
+\end_layout
+
+\begin_layout Standard
+Der vil blive brugt version styring under hele projektet.
+ Specifikt vil git blive brugt, og hosten github på adressen: 
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+https://github.com/nnyegaard/AoAA
+\end_layout
+
+\end_inset
+
+ vil indeholde alt kilde kode samt rapporten.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+newpage
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Risikoanalyse
+\end_layout
+
+\begin_layout Standard
+Der er lavet en risikoanalyse af hvad projektet kunne komme ud for af problemer
+ samt hvilken konsekvens det ville have for projektet, samt mulighed for
+ forebyggelse og afhjælpning af problemet.
+\end_layout
+
+\begin_layout Itemize
+Sygdom - Hvis en udvikler bliver syg, vil det nedsætte hastigheden for at
+ projektet.
+ Dette er en stor risici, da der kun er tilknyttet 1 udvikler projektet
+ og der derfor er en mulighed for at projektet vil gå i stå hvis denne blive
+ syg.
+ Dog er der tilkendegivet at udvikleren sjældent bliver syg.
+\end_layout
+
+\begin_layout Itemize
+Tekniske problemer - Det kan ske at projektet pludselig kræver flere ressourcer,
+ end der er estimeret, og dette vil højssansynligt betyde et skred i tidsplanen.
+ Et teknisk problem kan være en fejl i de værktøjer som benyttes eller skal
+ benyttes, eller et krav som ikke kan klares med de valgte værktøjer.
+ Der er opstillet følgende løsningsforslag, samt vælges afhængig af problemet
+ der opleves:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Løse det pågældende problem og da skubbe ens tidsplan
+\end_layout
+
+\begin_layout Itemize
+Analysere problemet, medhenblik på om det kan løses ved at ændre et krav
+ eller skifte værktøj
+\end_layout
+
+\begin_layout Itemize
+Udsætte en løsning og da dokumenter problemet under videreudvikling
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Ændring af krav - Hvis der underforløbet skulle ske ændringer i krav vil
+ det i mange tilfælde betyde ekstra arbejder eller direkte spildt arbejde.
+ Dette skulle derfor helst ske så hurtig som muligt at ændringer i krav
+ tidligt i forløbet vil have mindst indflydelse på tidsplanen
+\end_layout
+
+\begin_layout Standard
+De forskellige risici kan nu bliver analyseret ved at fylde dem ind i en
+ risikomatrix hvor man bagefter kan vurdere sandsynlighed og konsekvens.
+ Sandsynligheden og konsekvensen angives på en skala fra 1-5, og ved at
+ gange sandsynlighed og konsekvens fås en total værdi af den pågældende
+ risiko.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="4">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Risiko
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Sandsynlighed(S)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Konsekvens(K)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Total(S*K)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Sygdom
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+10
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Tekniske problemer
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+12
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ændring i krav
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+8
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Risikomatrix
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Ud fra risikomatrixen kan der ses at tekniske problemer har en relativ stor
+ sandsynlighed samt en middel stor konsekvens, der skal derfor igennem projektet
+ være stor fokus på dette område så man kan tage et valg derudfra de forslået
+ løsning så hurtigt som muligt.
+ Sygdom har ikke en speciel stor sandsynlighed, dog vil konsekvensen være
+ meget stor da projektet da vil gå i stå.
+ Da kravene er udarbejdet via BDD, og er blevet gennem gået sammen med vejleren,
+ er chancen for at de ændre sig ikke særlig stor.
+\end_layout
+
+\end_body
+\end_document
