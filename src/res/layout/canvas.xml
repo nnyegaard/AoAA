@@ -16,7 +16,7 @@
             android:id="@+id/penBtn"
             android:layout_width="60dp"
             android:layout_height="fill_parent"
-            android:src="@drawable/tool_ic_pen"
+            android:src="@drawable/content-edit"
             android:clickable="true"
             android:onClick="selectPen" />
 
