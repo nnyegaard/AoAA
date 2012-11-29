@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="libspen22">
+    <CLASSES>
+      <root url="jar://C:/Development/S_Pen_SDK_2_2/libs/libspen22.jar!/" />
+      <root url="jar://C:/Development/S_Pen_SDK_2_2/libs/libspen22_multiwindow.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
