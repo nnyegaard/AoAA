@@ -40,7 +40,7 @@
     <file path="$PROJECT_DIR$/gen/me/nyegaard/Notifications/BuildConfig.java" changelist="0bd9579e-7310-49f5-8089-0a679c5c2699" time="1351334215307" ignored="false" />
     <file path="/Dummy.txt" changelist="0bd9579e-7310-49f5-8089-0a679c5c2699" time="1354195579383" ignored="false" />
     <file path="/notification.xml" changelist="0bd9579e-7310-49f5-8089-0a679c5c2699" time="1354191848437" ignored="false" />
-    <file path="/NotificationView.java" changelist="0bd9579e-7310-49f5-8089-0a679c5c2699" time="1354191619561" ignored="false" />
+    <file path="/NotificationView.java" changelist="0bd9579e-7310-49f5-8089-0a679c5c2699" time="1354267922274" ignored="false" />
     <file path="$USER_HOME$/AppData/Local/Temp/android_manifest_copy7168531285805803188tmp/AndroidManifest.xml" changelist="0bd9579e-7310-49f5-8089-0a679c5c2699" time="1351169700948" ignored="false" />
     <file path="/strings.xml" changelist="0bd9579e-7310-49f5-8089-0a679c5c2699" time="1354194992810" ignored="false" />
     <file path="/.name" changelist="0bd9579e-7310-49f5-8089-0a679c5c2699" time="1354195373386" ignored="false" />
@@ -114,13 +114,36 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="canvas.xml" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="canvas.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/res/layout/canvas.xml">
           <provider selected="true" editor-type-id="android-designer">
             <state />
           </provider>
           <provider editor-type-id="text-editor">
             <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NotificationView.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/me/nyegaard/AAoA/NotificationView.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="37" column="37" selection-start="991" selection-end="991" vertical-scroll-proportion="0.44186047">
+              <folding>
+                <element signature="e#1950#2254#0" expanded="true" />
+                <element signature="e#2243#2244#0" expanded="true" />
+                <element signature="e#2768#3024#0" expanded="true" />
+                <element signature="e#3013#3014#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AndroidManifest.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="16" column="45" selection-start="601" selection-end="601" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -147,7 +170,6 @@
         <option value="$PROJECT_DIR$/res/values/notification.xml" />
         <option value="$PROJECT_DIR$/res/layout/main.xml" />
         <option value="$PROJECT_DIR$/res/values/styles.xml" />
-        <option value="$PROJECT_DIR$/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/res/layout/notification.xml" />
         <option value="$PROJECT_DIR$/src/me/nyegaard/Notifications/NotificationActivity.java" />
         <option value="$PROJECT_DIR$/src/me/nyegaard/Notifications/NotificationView.java" />
@@ -157,6 +179,8 @@
         <option value="$PROJECT_DIR$/.idea/.name" />
         <option value="$USER_HOME$/.IdeaIC12/system/compile-server/aaoa_315c2def/android/generated_sources/AAoA/aapt/me/nyegaard/AAoA/R.java" />
         <option value="$PROJECT_DIR$/res/layout/canvas.xml" />
+        <option value="$PROJECT_DIR$/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/src/me/nyegaard/AAoA/NotificationView.java" />
       </list>
     </option>
   </component>
@@ -275,6 +299,24 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="drawable-xhdpi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AAoA" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="drawable-mdpi" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -303,6 +345,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHOW_ALL_PROCESSES" value="false" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="GoToFile.includeJavaFiles" value="false" />
     <property name="project.structure.proportion" value="0.0" />
@@ -313,7 +356,9 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="AndroidLayoutSelectedEditor" value="android-designer" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="DEBUGGABLE_DEVICE" value="4107c81f3f297fa7" />
     <property name="MemberChooser.copyJavadoc" value="false" />
+    <property name="DEBUGGABLE_PROCESS" value="me.nyegaard.AAoA" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="restartRequiresConfirmation" value="true" />
     <property name="MemberChooser.showClasses" value="true" />
@@ -326,6 +371,9 @@
       <recent name="C:\Users\niny.EMENTOR\Documents\GitHub\AoAA\src\res\drawable-mdpi" />
       <recent name="C:\Users\niny.EMENTOR\Documents\GitHub\AoAA\src\res\drawable-hdpi" />
       <recent name="C:\Users\niny.EMENTOR\Desktop\AndroidPlay\Notifications\res\drawable-hdpi" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\niny.EMENTOR\Documents\GitHub\AoAA\src\res\drawable-xhdpi" />
     </key>
   </component>
   <component name="RunManager" selected="Android Application.AAoA">
@@ -512,13 +560,13 @@
     <frame x="-8" y="-8" width="1616" height="1176" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3088803" sideWeight="0.73699707" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32754183" sideWeight="0.6712463" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3088803" sideWeight="0.73699707" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32754183" sideWeight="0.73699707" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3994112" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25711483" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32875368" sideWeight="0.5083655" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -528,8 +576,8 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17374517" sideWeight="0.73699707" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26300293" sideWeight="0.497426" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17374517" sideWeight="0.7428852" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26300293" sideWeight="0.497426" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32947233" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -600,11 +648,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/project.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="17" selection-start="562" selection-end="562" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
@@ -622,29 +665,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/gen/me/nyegaard/AAoA/Manifest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="19" selection-start="142" selection-end="142" vertical-scroll-proportion="0.057286434" />
+        <state line="3" column="19" selection-start="142" selection-end="142" vertical-scroll-proportion="0.057286434">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/gen/me/nyegaard/AAoA/BuildConfig.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="19" selection-start="97" selection-end="97" vertical-scroll-proportion="0.057286434" />
+        <state line="3" column="19" selection-start="97" selection-end="97" vertical-scroll-proportion="0.057286434">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/gen/me/nyegaard/AAoA/R.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="19" selection-start="135" selection-end="135" vertical-scroll-proportion="0.057286434" />
+        <state line="3" column="19" selection-start="135" selection-end="135" vertical-scroll-proportion="0.057286434">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/AAoA.iml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="17" selection-start="432" selection-end="432" vertical-scroll-proportion="0.2482412">
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ant.properties">
@@ -664,13 +706,6 @@
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/me/nyegaard/AAoA/StartActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="7" selection-start="388" selection-end="388" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/res/drawable-hdpi/contentedit.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -683,6 +718,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/me/nyegaard/AAoA/StartActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="7" selection-start="388" selection-end="388" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/canvas.xml">
       <provider selected="true" editor-type-id="android-designer">
         <state />
@@ -690,6 +732,25 @@
       <provider editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="45" selection-start="601" selection-end="601" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/me/nyegaard/AAoA/NotificationView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="37" column="37" selection-start="991" selection-end="991" vertical-scroll-proportion="0.44186047">
+          <folding>
+            <element signature="e#1950#2254#0" expanded="true" />
+            <element signature="e#2243#2244#0" expanded="true" />
+            <element signature="e#2768#3024#0" expanded="true" />
+            <element signature="e#3013#3014#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

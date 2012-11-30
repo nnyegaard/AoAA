@@ -16,7 +16,7 @@
             android:id="@+id/penBtn"
             android:layout_width="60dp"
             android:layout_height="fill_parent"
-            android:src="@drawable/content-edit"
+            android:src="@drawable/content_edit"
             android:clickable="true"
             android:onClick="selectPen" />
 
@@ -29,6 +29,15 @@
             android:layout_gravity="left|center_vertical"
             android:clickable="true"
             android:onClick="selectEraser" />
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="fill_parent"
+            android:id="@+id/saveBtn"
+            android:src="@drawable/content_save"
+            android:baselineAlignBottom="false"
+            android:clickable="true" />
+
     </LinearLayout>
 
     <FrameLayout
