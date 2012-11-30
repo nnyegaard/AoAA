@@ -12,10 +12,13 @@ import android.os.Environment;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
-import android.widget.Toast;
+
 import com.samsung.spen.settings.SettingStrokeInfo;
 import com.samsung.spensdk.SCanvasConstants;
 import com.samsung.spensdk.SCanvasView;
+import com.samsung.spensdk.applistener.ColorPickerColorChangeListener;
+import com.samsung.spensdk.applistener.SCanvasInitializeListener;
+import com.samsung.spensdk.applistener.SCanvasModeChangedListener;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -39,7 +42,6 @@ public class NotificationView extends Activity
     private ImageView       mPenBtn;
     private ImageView		mEraserBtn;
     private ImageView       mSaveBtn;
-    private ImageView		mColorPickerBtn;
 
     @Override
     public void onCreate(Bundle savedInstanceState)
@@ -52,6 +54,11 @@ public class NotificationView extends Activity
         // UI Settings
         //------------------------------------
         mPenBtn = (ImageView) findViewById(R.id.penBtn);
+        mPenBtn.setOnClickListener(mBtnClickListener);
+        mEraserBtn = (ImageView) findViewById(R.id.eraserBtn);
+        mEraserBtn.setOnClickListener(mBtnClickListener);
+        mSaveBtn = (ImageView) findViewById(R.id.saveBtn);
+        mSaveBtn.setOnClickListener(mBtnClickListener);
 
 
         //------------------------------------
@@ -62,44 +69,118 @@ public class NotificationView extends Activity
         mCanvasContainer.addView(mSCanvas);
 
         //------------------------------------
-        // Create Button listeners
+        // SettingView Setting
         //------------------------------------
-
-        mPenBtn.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View view)
-            {
-                mSCanvas.setCanvasMode(SCanvasConstants.SCANVAS_MODE_INPUT_PEN);
-                Toast.makeText(getBaseContext(), "Pen", Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        mEraserBtn = (ImageView) findViewById(R.id.eraserBtn);
-        mEraserBtn.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View view)
-            {
-                mSCanvas.setCanvasMode(SCanvasConstants.SCANVAS_MODE_INPUT_ERASER);
-                Toast.makeText(getBaseContext(), "Eraser", Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        mSaveBtn = (ImageView) findViewById(R.id.saveBtn);
-        mSaveBtn.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View view)
-            {
-                saveCanvas();
-                Toast.makeText(getBaseContext(), "Saving", Toast.LENGTH_SHORT).show();
-            }
-        });
+        mSCanvas.createSettingView(mCanvasContainer, null, null);
 
         NotificationManager nm = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
-
         nm.cancel(getIntent().getExtras().getInt("notificationID"));
+
+        //====================================================================================
+        //
+        // Set Callback Listener(Interface)
+        //
+        //====================================================================================
+        //------------------------------------------------
+        // SCanvas Listener
+        //------------------------------------------------
+        mSCanvas.setSCanvasInitializeListener(new SCanvasInitializeListener()
+        {
+            @Override
+            public void onInitialized()
+            {
+                updateButtonState();
+            }
+        });
+
+        //------------------------------------------------
+        // SCanvas Mode Changed Listener
+        //------------------------------------------------
+        mSCanvas.setSCanvasModeChangedListener(new SCanvasModeChangedListener()
+        {
+            @Override
+            public void onModeChanged(int mode)
+            {
+                updateButtonState();
+            }
+        });
+
+        //------------------------------------------------
+        // Color Picker Listener
+        //------------------------------------------------
+        mSCanvas.setColorPickerColorChangeListener(new ColorPickerColorChangeListener()
+        {
+            @Override
+            public void onColorPickerColorChanged(int nColor)
+            {
+                int nCurMode = mSCanvas.getCanvasMode();
+                if(nCurMode==SCanvasConstants.SCANVAS_MODE_INPUT_PEN)
+                {
+                    SettingStrokeInfo strokeInfo = mSCanvas.getSettingViewStrokeInfo();
+                    if(strokeInfo != null)
+                    {
+                        strokeInfo.setStrokeColor(nColor);
+                        mSCanvas.setSettingViewStrokeInfo(strokeInfo);
+                    }
+                }
+            }
+        });
+
+        mPenBtn.setSelected(true);
+    }
+
+    View.OnClickListener mBtnClickListener = new View.OnClickListener()
+    {
+        @Override
+        public void onClick(View v)
+        {
+            int nBtnID = v.getId();
+            // If the mode is not changed, open the setting view. If the mode is same, close the setting view.
+            if(nBtnID == mPenBtn.getId())
+            {
+                if(mSCanvas.getCanvasMode()==SCanvasConstants.SCANVAS_MODE_INPUT_PEN)
+                {
+                    mSCanvas.setSettingViewSizeOption(SCanvasConstants.SCANVAS_SETTINGVIEW_PEN, SCanvasConstants.SCANVAS_SETTINGVIEW_SIZE_NORMAL);
+                    mSCanvas.toggleShowSettingView(SCanvasConstants.SCANVAS_SETTINGVIEW_PEN);
+                }
+                else
+                {
+                    mSCanvas.setCanvasMode(SCanvasConstants.SCANVAS_MODE_INPUT_PEN);
+                    mSCanvas.showSettingView(SCanvasConstants.SCANVAS_SETTINGVIEW_PEN, false);
+                    updateButtonState();
+                }
+            }
+            else if(nBtnID == mEraserBtn.getId())
+            {
+                if(mSCanvas.getCanvasMode()==SCanvasConstants.SCANVAS_MODE_INPUT_ERASER)
+                {
+                    mSCanvas.setSettingViewSizeOption(SCanvasConstants.SCANVAS_SETTINGVIEW_ERASER, SCanvasConstants.SCANVAS_SETTINGVIEW_SIZE_NORMAL);
+                    mSCanvas.toggleShowSettingView(SCanvasConstants.SCANVAS_SETTINGVIEW_ERASER);
+                }
+                else
+                {
+                    mSCanvas.setCanvasMode(SCanvasConstants.SCANVAS_MODE_INPUT_ERASER);
+                    mSCanvas.showSettingView(SCanvasConstants.SCANVAS_SETTINGVIEW_ERASER, false);
+                    updateButtonState();
+                }
+            }
+
+            else if(nBtnID == mSaveBtn.getId())
+            {
+                saveCanvas();
+            }
+        }
+    };
+
+    private void updateButtonState()
+    {
+        int nCurMode = mSCanvas.getCanvasMode();
+        mPenBtn.setSelected(nCurMode==SCanvasConstants.SCANVAS_MODE_INPUT_PEN);
+        mEraserBtn.setSelected(nCurMode==SCanvasConstants.SCANVAS_MODE_INPUT_ERASER);
+
+        // Reset color picker tool when Eraser Mode
+        if(nCurMode==SCanvasConstants.SCANVAS_MODE_INPUT_ERASER)
+            mSCanvas.setColorPickerMode(false);
     }
 
     public void saveCanvas()
@@ -116,10 +197,12 @@ public class NotificationView extends Activity
             bitmap.compress(Bitmap.CompressFormat.JPEG, 100, fos);
             fos.flush();
             fos.close();
-        }catch (FileNotFoundException e) {
+        }catch (FileNotFoundException e)
+        {
             // TODO Auto-generated catch block
             e.printStackTrace();
-        } catch (Exception e) {
+        } catch (Exception e)
+        {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
@@ -133,10 +216,8 @@ public class NotificationView extends Activity
         displayNotification();
     }
 
-
     protected void displayNotification()
     {
-
         Intent i = new  Intent(this, NotificationView.class);
         i.putExtra("notificationID", 0);
         PendingIntent pendingIntent = PendingIntent.getActivity(getBaseContext(), 0, i, 0);
@@ -149,8 +230,6 @@ public class NotificationView extends Activity
         CharSequence message = "Press to start AAoA." ;
 
         notif.setLatestEventInfo( this, from, message, pendingIntent);
-        //---100ms delay, vibrate for 250ms, pause for 100 ms and
-        //notif.vibrate =  new  long[] { 100, 250, 100, 500};
         nm.notify(0, notif);
     }
 }
