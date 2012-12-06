@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/tool_menu"
+        android:layout_width="fill_parent"
+        android:layout_height="63dp"
+        android:background="#d9d6d9"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/penBtn"
+            android:layout_width="60dp"
+            android:layout_height="fill_parent"
+            android:src="@drawable/contentedit"
+            android:clickable="true"
+            android:onClick="selectPen" />
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="fill_parent"
+            android:id="@+id/eraserBtn"
+            android:src="@drawable/tool_ic_eraser"
+            android:baselineAlignBottom="false"
+            android:layout_gravity="left|center_vertical"
+            android:clickable="true"
+            android:onClick="selectEraser" />
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="fill_parent"
+            android:id="@+id/saveBtn"
+            android:src="@drawable/content_save"
+            android:baselineAlignBottom="false"
+            android:clickable="true" />
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@id/canvas"
+        android:minHeight="696dp"
+        android:minWidth="1280dp">
+    </FrameLayout>
+</LinearLayout>
