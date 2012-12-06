@@ -9,6 +9,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
+import java.io.DataOutputStream;
+import java.io.IOException;
+
 
 public class StartActivity extends Activity
 {
@@ -26,6 +29,32 @@ public class StartActivity extends Activity
     {
         Toast.makeText(this,"In onClick", Toast.LENGTH_SHORT);
         displayNotification();
+
+        try
+        {
+            doCmd();
+        }
+        catch(IOException e)
+        {
+            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+        }
+        catch(InterruptedException e)
+        {
+            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+        }
+    }
+
+    public void doCmd() throws IOException, InterruptedException
+    {
+        Process process = Runtime.getRuntime().exec("su");
+
+        DataOutputStream os = new DataOutputStream(process.getOutputStream());
+
+        os.writeBytes("/system/bin/screencap /sdcard/test2.png");
+        os.flush();
+        os.close();
+
+        process.waitFor();
     }
 
     protected void displayNotification()
