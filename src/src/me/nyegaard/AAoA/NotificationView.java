@@ -19,9 +19,7 @@ import com.samsung.spensdk.applistener.ColorPickerColorChangeListener;
 import com.samsung.spensdk.applistener.SCanvasInitializeListener;
 import com.samsung.spensdk.applistener.SCanvasModeChangedListener;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
+import java.io.*;
 
 /**
  * Project: AAoA
@@ -203,7 +201,19 @@ public class NotificationView extends Activity
 
     private void saveCanvas()
     {
-
+        try
+        {
+            doCmd();
+        }
+        catch(IOException e)
+        {
+            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+        }
+        catch(InterruptedException e)
+        {
+            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+        }
+        /*
         View rootView = getWindow().getDecorView().findViewById(android.R.id.content);
         mSCanvas.setDrawingCacheEnabled(true);
         Bitmap bitmap = rootView.getDrawingCache();
@@ -225,7 +235,22 @@ public class NotificationView extends Activity
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
+        */
         finish();
+
+    }
+
+    private void doCmd() throws IOException, InterruptedException
+    {
+        Process process = Runtime.getRuntime().exec("su");
+
+        DataOutputStream os = new DataOutputStream(process.getOutputStream());
+
+        os.writeBytes("/system/bin/screencap /sdcard/test2.png");
+        os.flush();
+        os.close();
+
+        process.waitFor();
     }
 
     protected void displayNotification()
