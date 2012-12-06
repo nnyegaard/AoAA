@@ -10,9 +10,8 @@ import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.os.Environment;
 import android.view.View;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
-
+import android.widget.RelativeLayout;
 import com.samsung.spen.settings.SettingStrokeInfo;
 import com.samsung.spensdk.SCanvasConstants;
 import com.samsung.spensdk.SCanvasView;
@@ -36,12 +35,14 @@ public class NotificationView extends Activity
     // Variables
     //==============================
     Context mContext = null;
-
-    private FrameLayout     mCanvasContainer;
     private SCanvasView		mSCanvas;
     private ImageView       mPenBtn;
     private ImageView		mEraserBtn;
     private ImageView       mSaveBtn;
+
+    //==============================
+    // Android Methods
+    //==============================
 
     @Override
     public void onCreate(Bundle savedInstanceState)
@@ -64,7 +65,7 @@ public class NotificationView extends Activity
         //------------------------------------
         // Create SCanvasView
         //------------------------------------
-        mCanvasContainer = (FrameLayout) findViewById(R.id.canvas);
+        RelativeLayout mCanvasContainer = (RelativeLayout) findViewById(R.id.canvas);
         mSCanvas = new SCanvasView(mContext);
         mCanvasContainer.addView(mSCanvas);
 
@@ -129,7 +130,24 @@ public class NotificationView extends Activity
         mPenBtn.setSelected(true);
     }
 
-    View.OnClickListener mBtnClickListener = new View.OnClickListener()
+    @Override
+    public void onStart()
+    {
+        super.onStart();
+    }
+
+    @Override
+    public void onDestroy()
+    {
+        super.onDestroy();
+        displayNotification();
+    }
+
+    //==============================
+    // AAoA Methods
+    //==============================
+
+    final View.OnClickListener mBtnClickListener = new View.OnClickListener()
     {
         @Override
         public void onClick(View v)
@@ -183,15 +201,16 @@ public class NotificationView extends Activity
             mSCanvas.setColorPickerMode(false);
     }
 
-    public void saveCanvas()
+    private void saveCanvas()
     {
-        mSCanvas.setDrawingCacheEnabled(true);
 
-        Bitmap bitmap = mSCanvas.getBitmap(true);
+        View rootView = getWindow().getDecorView().findViewById(android.R.id.content);
+        mSCanvas.setDrawingCacheEnabled(true);
+        Bitmap bitmap = rootView.getDrawingCache();
 
         String extr = Environment.getExternalStorageDirectory().toString();
         File myPath = new File(extr, "test.jpg");
-        FileOutputStream fos = null;
+        FileOutputStream fos;
         try {
             fos = new FileOutputStream(myPath);
             bitmap.compress(Bitmap.CompressFormat.JPEG, 100, fos);
@@ -207,13 +226,6 @@ public class NotificationView extends Activity
             e.printStackTrace();
         }
         finish();
-    }
-
-    @Override
-    public void onDestroy()
-    {
-        super.onDestroy();
-        displayNotification();
     }
 
     protected void displayNotification()
