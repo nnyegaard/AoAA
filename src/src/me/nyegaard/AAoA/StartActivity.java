@@ -31,7 +31,7 @@ public class StartActivity extends Activity
         displayNotification();
     }
 
-    protected void displayNotification()
+    private void displayNotification()
     {
         Intent i = new  Intent(this, NotificationView.class);
         i.putExtra("notificationID", 0);

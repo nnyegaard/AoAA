@@ -12,6 +12,7 @@ import android.os.Environment;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.samsung.spen.settings.SettingStrokeInfo;
 import com.samsung.spensdk.SCanvasConstants;
@@ -40,6 +41,7 @@ public class NotificationView extends Activity
     private ImageView       mPenBtn;
     private ImageView		mEraserBtn;
     private ImageView       mSaveBtn;
+    final private String    externalStorage = Environment.getExternalStorageDirectory().toString();
 
     @Override
     public void onCreate(Bundle savedInstanceState)
@@ -127,6 +129,26 @@ public class NotificationView extends Activity
         mPenBtn.setSelected(true);
     }
 
+    @Override
+    public void onWindowFocusChanged(boolean hasFocus)
+    {
+        super.onWindowFocusChanged(hasFocus);
+        Toast.makeText(getBaseContext(), "Window has focus", Toast.LENGTH_SHORT).show();
+        if(hasFocus)
+        {
+            shellCmd("test2");
+        }
+
+    }
+
+    @Override
+    public void onDestroy()
+    {
+        super.onDestroy();
+        displayNotification();
+    }
+
+
     View.OnClickListener mBtnClickListener = new View.OnClickListener()
     {
         @Override
@@ -162,7 +184,6 @@ public class NotificationView extends Activity
                     updateButtonState();
                 }
             }
-
             else if(nBtnID == mSaveBtn.getId())
             {
                 saveCanvas();
@@ -181,27 +202,13 @@ public class NotificationView extends Activity
             mSCanvas.setColorPickerMode(false);
     }
 
-    public void saveCanvas()
+    private void saveCanvas()
     {
-        try
-        {
-            doCmd();
-        }
-        catch(IOException e)
-        {
-            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
-        }
-        catch(InterruptedException e)
-        {
-            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
-        }
-        /*
         mSCanvas.setDrawingCacheEnabled(true);
 
         Bitmap bitmap = mSCanvas.getBitmap(true);
 
-        String extr = Environment.getExternalStorageDirectory().toString();
-        File myPath = new File(extr, "test.jpg");
+        File myPath = new File(externalStorage, "test.png");
         FileOutputStream fos = null;
         try {
             fos = new FileOutputStream(myPath);
@@ -217,31 +224,36 @@ public class NotificationView extends Activity
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
-        */
+
+        shellCmd("AllInOne");
         finish();
     }
 
-    private void doCmd() throws IOException, InterruptedException
+    private void shellCmd(String fileName)
     {
-        Process process = Runtime.getRuntime().exec("su");
+        try
+        {
+            Process process = Runtime.getRuntime().exec("su");
 
-        DataOutputStream os = new DataOutputStream(process.getOutputStream());
+            DataOutputStream os = new DataOutputStream(process.getOutputStream());
 
-        os.writeBytes("/system/bin/screencap /sdcard/test2.png");
-        os.flush();
-        os.close();
+            os.writeBytes("/system/bin/screencap " + externalStorage + "/" + fileName + ".png"); // /sdcard/fileName.png
+            os.flush();
+            os.close();
 
-        process.waitFor();
+            process.waitFor();
+        }
+        catch(IOException e)
+        {
+            e.printStackTrace(); //Auto gen. statement
+        }
+        catch(InterruptedException e)
+        {
+            e.printStackTrace();  //Auto gen. statement
+        }
     }
 
-    @Override
-    public void onDestroy()
-    {
-        super.onDestroy();
-        displayNotification();
-    }
-
-    protected void displayNotification()
+    private void displayNotification()
     {
         Intent i = new  Intent(this, NotificationView.class);
         i.putExtra("notificationID", 0);
