@@ -29,35 +29,9 @@ public class StartActivity extends Activity
     {
         Toast.makeText(this,"In onClick", Toast.LENGTH_SHORT);
         displayNotification();
-
-        try
-        {
-            doCmd();
-        }
-        catch(IOException e)
-        {
-            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
-        }
-        catch(InterruptedException e)
-        {
-            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
-        }
     }
 
-    public void doCmd() throws IOException, InterruptedException
-    {
-        Process process = Runtime.getRuntime().exec("su");
-
-        DataOutputStream os = new DataOutputStream(process.getOutputStream());
-
-        os.writeBytes("/system/bin/screencap /sdcard/test2.png");
-        os.flush();
-        os.close();
-
-        process.waitFor();
-    }
-
-    protected void displayNotification()
+    private void displayNotification()
     {
         Intent i = new  Intent(this, NotificationView.class);
         i.putExtra("notificationID", 0);
