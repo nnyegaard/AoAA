@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">AAoA</string>
+    <string name="CreateNewNotebookBtn">Create</string>
+    <string name="ReShowNotification">Reshow notification</string>
+    <string name="createNotebookDialog">test</string>
+    <string name="createNotebookDialogTitle">Notebook name</string>
+    <string name="createNotebookDialogMsg">Enter the name of your Notebook</string>
+    <string name="CreateNotebookHint">Enter name of notebook</string>
 </resources>

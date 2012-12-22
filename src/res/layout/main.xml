@@ -1,15 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+
+<LinearLayout
+    android:orientation="horizontal"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent">
-
-    <Button
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="Display Notification"
-        android:id="@+id/btn_displayNotif"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--
+    <fragment
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:name="me.nyegaard.AAoA.LandscapeUIUI"
+        android:id="@+id/Control"
         android:layout_gravity="center"
-        android:onClick="onClick" />
-</LinearLayout>
+        android:layout_marginRight="5dp" />
 
+    <fragment
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:name="me.nyegaard.AAoA.PortraitUI
+        android:id="@+id/NoteList"
+        android:layout_gravity="right" />
+        -->
+</LinearLayout>
