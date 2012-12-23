@@ -165,4 +165,5 @@ pip-log.txt
 #############
 ## IDEA
 #############
+src/.idea/
 .idea/
