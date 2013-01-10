@@ -37,6 +37,12 @@
             android:src="@drawable/content_save"
             android:baselineAlignBottom="false"
             android:clickable="true" />
+        <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:id="@+id/showThumbnailBtn" android:src="@drawable/ic_launcher"
+                android:layout_marginLeft="88dp"
+            android:clickable="true" />
 
     </LinearLayout>
 

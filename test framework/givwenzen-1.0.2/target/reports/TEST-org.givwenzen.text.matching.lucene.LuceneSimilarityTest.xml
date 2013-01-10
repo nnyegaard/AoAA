@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite errors="0" failures="0" hostname="wes-vaio-ubuntu" name="org.givwenzen.text.matching.lucene.LuceneSimilarityTest" tests="2" time="0.944" timestamp="2011-03-30T21:48:31">
+  <properties>
+    <property name="env.DESKTOP_SESSION" value="gnome" />
+    <property name="env.OLDPWD" value="/home/wes/projects" />
+    <property name="file.encoding.pkg" value="sun.io" />
+    <property name="givwenzen.examples.src.dir" value="src/examples/java" />
+    <property name="env.rvm_bin_path" value="/home/wes/.rvm/bin" />
+    <property name="java.home" value="/usr/lib/jvm/java-6-sun-1.6.0.24/jre" />
+    <property name="givwenzen.testoutput.dir" value="/home/wes/projects/givwenzen-1.0.2/target/classes/test" />
+    <property name="env.GDM_LANG" value="en_US.utf8" />
+    <property name="mvn.repo.user" value="givwenzen" />
+    <property name="env.DISPLAY" value=":0.0" />
+    <property name="env.rvm_src_path" value="/home/wes/.rvm/src" />
+    <property name="env.rvm_log_path" value="/home/wes/.rvm/log" />
+    <property name="env.LS_COLORS" value="rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lz=01;31:*.xz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.rar=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.axv=01;35:*.anx=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.axa=00;36:*.oga=00;36:*.spx=00;36:*.xspf=00;36:" />
+    <property name="env.rvm_interactive_flag" value="1" />
+    <property name="zip.temp.dir" value="/home/wes/projects/givwenzen-1.0.2/givwenzen-20110330" />
+    <property name="env.XDG_SESSION_COOKIE" value="1ff2866066ebfb84e2235fdd4cb19a87-1301403097.913562-1216510447" />
+    <property name="java.endorsed.dirs" value="/usr/lib/jvm/java-6-sun-1.6.0.24/jre/lib/endorsed" />
+    <property name="env.LOGNAME" value="wes" />
+    <property name="env.USERNAME" value="wes" />
+    <property name="env.SESSION_MANAGER" value="local/wes-vaio-ubuntu:@/tmp/.ICE-unix/2088,unix/wes-vaio-ubuntu:/tmp/.ICE-unix/2088" />
+    <property name="sun.os.patch.level" value="unknown" />
+    <property name="java.vendor.url" value="http://java.sun.com/" />
+    <property name="env.MANDATORY_PATH" value="/usr/share/gconf/gnome.mandatory.path" />
+    <property name="java.version" value="1.6.0_24" />
+    <property name="env.ORBIT_SOCKETDIR" value="/tmp/orbit-wes" />
+    <property name="env.rvm_docs_path" value="/home/wes/.rvm/docs" />
+    <property name="java.vendor.url.bug" value="http://java.sun.com/cgi-bin/bugreport.cgi" />
+    <property name="env.LANGUAGE" value="en_US:en" />
+    <property name="env.GEM_HOME" value="/home/wes/.rvm/gems/ruby-1.9.2-p0" />
+    <property name="ant.project.invoked-targets" value="build.givwenzen" />
+    <property name="env.XDG_DATA_DIRS" value="/usr/share/gnome:/usr/local/share/:/usr/share/" />
+    <property name="env.GNOME_KEYRING_CONTROL" value="/tmp/keyring-8B7zK7" />
+    <property name="ant.file.type.givwenzen" value="file" />
+    <property name="env.RUBY_VERSION" value="ruby-1.9.2-p0" />
+    <property name="user.name" value="wes" />
+    <property name="env.LANG" value="en_US.UTF-8" />
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle" />
+    <property name="sun.jnu.encoding" value="UTF-8" />
+    <property name="env.DBUS_SESSION_BUS_ADDRESS" value="unix:abstract=/tmp/dbus-xUnr8ko8Cc,guid=91d45b387ee71f6d1b9ca2a00000006d" />
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment" />
+    <property name="date.based.file.name" value="givwenzen-20110330" />
+    <property name="jdk.home.givwenzen" value="/usr/lib64/jvm/java-6-sun" />
+    <property name="java.specification.name" value="Java Platform API Specification" />
+    <property name="user.timezone" value="" />
+    <property name="env.LESSOPEN" value="| /usr/bin/lesspipe %s" />
+    <property name="env.rvm_patches_path" value="/home/wes/.rvm/patches" />
+    <property name="path.separator" value=":" />
+    <property name="env.rvm_ruby_string" value="ruby-1.9.2-p0" />
+    <property name="env.rvm_gemsets_path" value="/home/wes/.rvm/gemsets" />
+    <property name="file.encoding" value="UTF-8" />
+    <property name="ant.project.default-target" value="build.givwenzen" />
+    <property name="env.HOME" value="/home/wes" />
+    <property name="ant.file" value="/home/wes/projects/givwenzen-1.0.2/build.xml" />
+    <property name="project.jdk.bin" value="/usr/lib64/jvm/java-6-sun/bin" />
+    <property name="env._" value="/usr/bin/ant" />
+    <property name="java.io.tmpdir" value="/tmp" />
+    <property name="env.GNOME_KEYRING_PID" value="2069" />
+    <property name="TODAY" value="March 30 2011" />
+    <property name="user.language" value="en" />
+    <property name="line.separator" value="
+" />
+    <property name="ant.file.type" value="file" />
+    <property name="env.SSH_AGENT_PID" value="2122" />
+    <property name="java.vm.info" value="mixed mode" />
+    <property name="sun.desktop" value="gnome" />
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification" />
+    <property name="env.COLORTERM" value="gnome-terminal" />
+    <property name="givwenzen.output.dir" value="/home/wes/projects/givwenzen-1.0.2/target/classes/main" />
+    <property name="givwenzen.examplesoutput.dir" value="/home/wes/projects/givwenzen-1.0.2/target/classes/examples" />
+    <property name="env.rvm_rubies_path" value="/home/wes/.rvm/rubies" />
+    <property name="env.rvm_scripts_path" value="/home/wes/.rvm/scripts" />
+    <property name="env.rvm_environments_path" value="/home/wes/.rvm/environments" />
+    <property name="env.rvm_path" value="/home/wes/.rvm" />
+    <property name="env.GEM_PATH" value="/home/wes/.rvm/gems/ruby-1.9.2-p0:/home/wes/.rvm/gems/ruby-1.9.2-p0@global" />
+    <property name="env.GDMSESSION" value="gnome" />
+    <property name="java.awt.printerjob" value="sun.print.PSPrinterJob" />
+    <property name="env.DEFAULTS_PATH" value="/usr/share/gconf/gnome.default.path" />
+    <property name="env.rvm_archives_path" value="/home/wes/.rvm/archives" />
+    <property name="ant.version" value="Apache Ant version 1.8.0 compiled on May 9 2010" />
+    <property name="env.rvm_man_path" value="/home/wes/.rvm/man" />
+    <property name="env.WINDOWID" value="96513105" />
+    <property name="env.rvm_help_path" value="/home/wes/.rvm/help" />
+    <property name="givwenzen.lib.dir" value="/home/wes/projects/givwenzen-1.0.2/lib" />
+    <property name="env.rvm_config_path" value="/home/wes/.rvm/config" />
+    <property name="env.rvm_usr_path" value="/home/wes/.rvm/usr" />
+    <property name="env.rvm_gems_cache_path" value="/home/wes/.rvm/gems/cache" />
+    <property name="os.name" value="Linux" />
+    <property name="java.specification.vendor" value="Sun Microsystems Inc." />
+    <property name="env.rvm_version" value="1.2.8" />
+    <property name="env.TERM" value="xterm" />
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM" />
+    <property name="java.library.path" value="/usr/lib/jvm/java-6-sun-1.6.0.24/jre/lib/amd64/server:/usr/lib/jvm/java-6-sun-1.6.0.24/jre/lib/amd64:/usr/lib/jvm/java-6-sun-1.6.0.24/jre/../lib/amd64:/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib" />
+    <property name="env.PATH" value="/home/wes/.rvm/gems/ruby-1.9.2-p0/bin:/home/wes/.rvm/gems/ruby-1.9.2-p0@global/bin:/home/wes/.rvm/rubies/ruby-1.9.2-p0/bin:/home/wes/.rvm/bin:/home/wes/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games" />
+    <property name="env.LESSCLOSE" value="/usr/bin/lesspipe %s %s" />
+    <property name="ant.java.version" value="1.6" />
+    <property name="findbugs.home" value="/java_tools/findbugs-1.3.9" />
+    <property name="env.rvm_user_path" value="/home/wes/.rvm/user" />
+    <property name="givwenzen.main.src.dir" value="src/main/java" />
+    <property name="basedir" value="/home/wes/projects/givwenzen-1.0.2" />
+    <property name="java.class.version" value="50.0" />
+    <property name="ant.file.givwenzen" value="/home/wes/projects/givwenzen-1.0.2/build.xml" />
+    <property name="env.SHLVL" value="1" />
+    <property name="env.LD_LIBRARY_PATH" value="/usr/lib/jvm/java-6-sun-1.6.0.24/jre/lib/amd64/server:/usr/lib/jvm/java-6-sun-1.6.0.24/jre/lib/amd64:/usr/lib/jvm/java-6-sun-1.6.0.24/jre/../lib/amd64" />
+    <property name="ant.home" value="/usr/share/ant" />
+    <property name="givwenzen.test.src.dir" value="src/test/java" />
+    <property name="jar.examples.file.name" value="givwenzen-examples-20110330.jar" />
+    <property name="sun.boot.library.path" value="/usr/lib/jvm/java-6-sun-1.6.0.24/jre/lib/amd64" />
+    <property name="build_date" value="20110330" />
+    <property name="maven.releases.repo" value="http://somerepo/content/repositories/releases" />
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Server Compiler" />
+    <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment" />
+    <property name="reports.tests" value="/home/wes/projects/givwenzen-1.0.2/target/reports" />
+    <property name="env.USER" value="wes" />
+    <property name="env.GTK_MODULES" value="canberra-gtk-module" />
+    <property name="env.rvm_examples_path" value="/home/wes/.rvm/examples" />
+    <property name="project.jdk.home" value="/usr/lib64/jvm/java-6-sun" />
+    <property name="ant.project.name" value="givwenzen" />
+    <property name="java.vm.specification.version" value="1.0" />
+    <property name="env.GDM_KEYBOARD_LAYOUT" value="us" />
+    <property name="mvn.repo.password" value="givwenzen" />
+    <property name="env.NLSPATH" value="/usr/dt/lib/nls/msg/%L/%N.cat" />
+    <property name="env.rvm_wrappers_path" value="/home/wes/.rvm/wrappers" />
+    <property name="env.MY_RUBY_HOME" value="/home/wes/.rvm/rubies/ruby-1.9.2-p0" />
+    <property name="sun.cpu.isalist" value="" />
+    <property name="java.ext.dirs" value="/usr/lib/jvm/java-6-sun-1.6.0.24/jre/lib/ext:/usr/java/packages/lib/ext" />
+    <property name="os.version" value="2.6.36-020636-generic" />
+    <property name="user.home" value="/home/wes" />
+    <property name="java.vm.vendor" value="Sun Microsystems Inc." />
+    <property name="env.JAVA_HOME" value="/usr/lib64/jvm/java-6-sun" />
+    <property name="env.XAUTHORITY" value="/var/run/gdm/auth-for-wes-e6nqpp/database" />
+    <property name="user.dir" value="/home/wes/projects/givwenzen-1.0.2" />
+    <property name="env.XFILESEARCHPATH" value="/usr/dt/app-defaults/%L/Dt" />
+    <property name="env.WINDOWPATH" value="7" />
+    <property name="fitnesse.port" value="8001" />
+    <property name="zip.file.name" value="givwenzen-20110330.zip" />
+    <property name="env.PWD" value="/home/wes/projects/givwenzen-1.0.2" />
+    <property name="env.rvm_tmp_path" value="/home/wes/.rvm/tmp" />
+    <property name="sun.cpu.endian" value="little" />
+    <property name="jdk.bin.givwenzen" value="/usr/lib64/jvm/java-6-sun/bin" />
+    <property name="java.vm.version" value="19.1-b02" />
+    <property name="env.rvm_selfcontained" value="1" />
+    <property name="java.class.path" value="/home/wes/projects/givwenzen-1.0.2/lib/commons-logging.jar:/home/wes/projects/givwenzen-1.0.2/lib/javassist.jar:/home/wes/projects/givwenzen-1.0.2/lib/log4j-1.2.9.jar:/home/wes/projects/givwenzen-1.0.2/lib/guava-r06.jar:/home/wes/projects/givwenzen-1.0.2/lib/commons-vfs-1.0.jar:/home/wes/projects/givwenzen-1.0.2/lib/dom4j-1.6.1.jar:/home/wes/projects/givwenzen-1.0.2/lib/slf4j-api-1.5.6.jar:/home/wes/projects/givwenzen-1.0.2/lib/slf4j-simple-1.5.6.jar:/home/wes/projects/givwenzen-1.0.2/lib/fitlibrary.jar:/home/wes/projects/givwenzen-1.0.2/lib/fitnesse.jar:/home/wes/projects/givwenzen-1.0.2/lib/fest-assert-1.2.jar:/home/wes/projects/givwenzen-1.0.2/lib/fest-util-1.1.jar:/home/wes/projects/givwenzen-1.0.2/lib/lucene-core-3.0.2.jar:/home/wes/projects/givwenzen-1.0.2/target/classes/main:/home/wes/projects/givwenzen-1.0.2/lib/hamcrest-core-1.1.jar:/home/wes/projects/givwenzen-1.0.2/lib/junit-4.5.jar:/home/wes/projects/givwenzen-1.0.2/lib/mockito-core-1.7.jar:/home/wes/projects/givwenzen-1.0.2/lib/objenesis-1.0.jar:/home/wes/projects/givwenzen-1.0.2/lib/clover-2.6.1.jar:/home/wes/projects/givwenzen-1.0.2/target/classes/test:/usr/share/java/ant-launcher-1.8.0.jar:/usr/share/ant/lib/ant.jar:/usr/share/ant/lib/ant-junit.jar" />
+    <property name="DSTAMP" value="20110330" />
+    <property name="givwenzen.basedir" value="/home/wes/projects/givwenzen-1.0.2" />
+    <property name="env.rvm_gems_path" value="/home/wes/.rvm/gems" />
+    <property name="ant.library.dir" value="/usr/share/ant/lib" />
+    <property name="givwenzen.target.dir" value="/home/wes/projects/givwenzen-1.0.2/target" />
+    <property name="os.arch" value="amd64" />
+    <property name="sun.java.launcher" value="SUN_STANDARD" />
+    <property name="ant.core.lib" value="/usr/share/ant/lib/ant.jar" />
+    <property name="java.vm.specification.vendor" value="Sun Microsystems Inc." />
+    <property name="TSTAMP" value="1647" />
+    <property name="file.separator" value="/" />
+    <property name="maven.snapshots.repo" value="http://somerepo/content/repositories/snapshots" />
+    <property name="jar.file.name" value="givwenzen-20110330.jar" />
+    <property name="java.runtime.version" value="1.6.0_24-b07" />
+    <property name="sun.boot.class.path" value="/usr/lib/jvm/java-6-sun-1.6.0.24/jre/lib/resources.jar:/usr/lib/jvm/java-6-sun-1.6.0.24/jre/lib/rt.jar:/usr/lib/jvm/java-6-sun-1.6.0.24/jre/lib/sunrsasign.jar:/usr/lib/jvm/java-6-sun-1.6.0.24/jre/lib/jsse.jar:/usr/lib/jvm/java-6-sun-1.6.0.24/jre/lib/jce.jar:/usr/lib/jvm/java-6-sun-1.6.0.24/jre/lib/charsets.jar:/usr/lib/jvm/java-6-sun-1.6.0.24/jre/lib/modules/jdk.boot.jar:/usr/lib/jvm/java-6-sun-1.6.0.24/jre/classes" />
+    <property name="env.SSH_AUTH_SOCK" value="/tmp/keyring-8B7zK7/ssh" />
+    <property name="env.XDG_CONFIG_DIRS" value="/etc/xdg/xdg-gnome:/etc/xdg" />
+    <property name="env.rvm_repos_path" value="/home/wes/.rvm/repos" />
+    <property name="user.country" value="US" />
+    <property name="givwenzen.baseoutput.dir" value="/home/wes/projects/givwenzen-1.0.2/target/classes" />
+    <property name="env.rvm_lib_path" value="/home/wes/.rvm/lib" />
+    <property name="env.SHELL" value="/bin/bash" />
+    <property name="jar.with.dependencies.file.name" value="givwenzen-with-dependencies-20110330.jar" />
+    <property name="env.rvm_hook" value="after_cd" />
+    <property name="java.vendor" value="Sun Microsystems Inc." />
+    <property name="java.specification.version" value="1.6" />
+    <property name="env.IRBRC" value="/home/wes/.rvm/rubies/ruby-1.9.2-p0/.irbrc" />
+    <property name="env.SPEECHD_PORT" value="7560" />
+    <property name="sun.arch.data.model" value="64" />
+    <property name="env.GNOME_DESKTOP_SESSION_ID" value="this-is-deprecated" />
+  </properties>
+  <testcase classname="org.givwenzen.text.matching.lucene.LuceneSimilarityTest" name="shouldFindMethodWithAtLeastOneWordInCommon" time="0.796" />
+  <testcase classname="org.givwenzen.text.matching.lucene.LuceneSimilarityTest" name="shouldListClosestNameFirst" time="0.017" />
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -6,6 +6,7 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.os.Environment;
@@ -36,6 +37,8 @@ public class Canvas extends Activity
     private ImageView		mEraserBtn;
     private ImageView       mSaveBtn;
     final private String    externalStorage = Environment.getExternalStorageDirectory().toString();
+    final FolderStructure folderStructure = new FolderStructure();
+
 
     @Override
     public void onCreate(Bundle savedInstanceState)
@@ -130,7 +133,7 @@ public class Canvas extends Activity
         Toast.makeText(getBaseContext(), "Window has focus", Toast.LENGTH_SHORT).show();
         if(hasFocus)
         {
-            shellCmd("test2");
+            //shellCmd("test2"); // Take a picture of the background
         }
 
     }
@@ -203,6 +206,10 @@ public class Canvas extends Activity
 
     private void saveCanvas()
     {
+        //   TODO: Implement a feature where you can pull the canvas over the background
+        /*
+         * Implementation of saving the canvas
+         *
         mSCanvas.setDrawingCacheEnabled(true);
 
         Bitmap bitmap = mSCanvas.getBitmap(true);
@@ -223,20 +230,30 @@ public class Canvas extends Activity
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
+        */
 
-        shellCmd("AllInOne");
+        SharedPreferences settings = getSharedPreferences(folderStructure.getNoteBookName(), 0);
+
+        int cnt = settings.getInt(folderStructure.getNoteBookName(), 0);
+        String fileName = cnt  + "";
+
+        shellCmd(fileName);
+
+        SharedPreferences.Editor editor = settings.edit().putInt(folderStructure.getNoteBookName(), ++cnt);
+        editor.commit();
         finish();
     }
 
     private void shellCmd(String fileName)
     {
+
         try
         {
             Process process = Runtime.getRuntime().exec("su");
 
             DataOutputStream os = new DataOutputStream(process.getOutputStream());
 
-            os.writeBytes("/system/bin/screencap " + externalStorage + "/" + fileName + ".png"); // /sdcard/fileName.png
+            os.writeBytes("/system/bin/screencap " + externalStorage + "/AAoA/" + folderStructure.getNoteBookName() + "/" + fileName + ".png");
             os.flush();
             os.close();
 

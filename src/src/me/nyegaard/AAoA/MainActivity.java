@@ -2,12 +2,17 @@ package me.nyegaard.AAoA;
 
 import android.app.*;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
+
 
 
 public class MainActivity extends Activity
 {
+    private final FolderStructure folderStructure = new FolderStructure();
+
     /**
      * Called when the activity is first created.
      */
@@ -38,8 +43,12 @@ public class MainActivity extends Activity
 
     public void onClick(View view)
     {
+
+        EditText noteBookNameView = (EditText) findViewById(R.id.editText);
+
         createNotification();
-        // Logic about edit text field
+        folderStructure.setNoteBookName(noteBookNameView.getText().toString());
+        folderStructure.createFolder();
         finish();
     }
 
