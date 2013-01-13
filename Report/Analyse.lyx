@@ -3,15 +3,9 @@
 \begin_document
 \begin_header
 \textclass article
-\begin_preamble
-\usepackage{listings}
-\end_preamble
 \use_default_options true
-\begin_modules
-customHeadersFooters
-\end_modules
 \maintain_unincluded_children false
-\language danish
+\language english
 \language_package default
 \inputencoding auto
 \fontencoding global
@@ -31,7 +25,6 @@ customHeadersFooters
 \bibtex_command default
 \index_command default
 \paperfontsize default
-\spacing single
 \use_hyperref false
 \papersize default
 \use_geometry false
@@ -51,8 +44,8 @@ customHeadersFooters
 \end_index
 \secnumdepth 3
 \tocdepth 3
-\paragraph_separation skip
-\defskip smallskip
+\paragraph_separation indent
+\paragraph_indentation default
 \quotes_language english
 \papercolumns 1
 \papersides 1
@@ -67,51 +60,79 @@ customHeadersFooters
 \begin_body
 
 \begin_layout Section
-Projekt plan for AoAA
-\end_layout
-
-\begin_layout Standard
-<Et resume af dette kapitel>
+Analyse
 \end_layout
 
 \begin_layout Subsection
-Projekt mål
+Android
 \end_layout
 
 \begin_layout Subsubsection
-Antagelser
+Activity 
 \end_layout
 
 \begin_layout Standard
-Android version 4, Samsung Galaxy Note 10.1, root
+Hvad er activityies, livecycel(Pic fra developer.android.com)
 \end_layout
 
 \begin_layout Subsubsection
-Undtagelser
+Fragments
+\end_layout
+
+\begin_layout Standard
+Hvad er fragments, livecycel(Pic fra developer.android.com)
+\end_layout
+
+\begin_layout Subsubsection
+Notification
+\end_layout
+
+\begin_layout Standard
+Hvad er notificationer
+\end_layout
+
+\begin_layout Subsubsection
+Rooting Android
+\end_layout
+
+\begin_layout Standard
+shellcmd, guide til hvordan man gør det
+\end_layout
+
+\begin_layout Subsubsection
+Storage
+\end_layout
+
+\begin_layout Standard
+static metoder
+\end_layout
+
+\begin_layout Subsubsection
+UI
+\end_layout
+
+\begin_layout Standard
+Design af UI, Når man vender tabletten rundt
+\end_layout
+
+\begin_layout Subsubsection
+Sikkerhed i Android OS
+\end_layout
+
+\begin_layout Standard
+Når jeg taget et pic af en activity for jeg ikke background med
 \end_layout
 
 \begin_layout Subsection
-Funktionelle krav
+Samsung SDK
 \end_layout
 
-\begin_layout Subsection
-Ikke funktionelle krav
+\begin_layout Subsubsection
+Canvas
 \end_layout
 
-\begin_layout Subsection
-Tidsplan
-\end_layout
-
-\begin_layout Subsection
-Kvalitetssikring
-\end_layout
-
-\begin_layout Subsection
-Reference
-\end_layout
-
-\begin_layout Subsection
-Revision
+\begin_layout Subsubsection
+Pen
 \end_layout
 
 \end_body

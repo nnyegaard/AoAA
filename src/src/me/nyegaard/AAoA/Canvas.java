@@ -1,18 +1,17 @@
 package me.nyegaard.AAoA;
 
-import android.app.Activity;
-import android.app.Notification;
-import android.app.NotificationManager;
-import android.app.PendingIntent;
+import android.app.*;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.os.Environment;
+import android.provider.MediaStore;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.ScrollView;
 import android.widget.Toast;
 
 import com.samsung.spen.settings.SettingStrokeInfo;
@@ -31,13 +30,16 @@ public class Canvas extends Activity
     //==============================
     Context mContext = null;
 
+    // Drawing
     private FrameLayout     mCanvasContainer;
     private SCanvasView		mSCanvas;
     private ImageView       mPenBtn;
     private ImageView		mEraserBtn;
     private ImageView       mSaveBtn;
+
+    // Storage
     final private String    externalStorage = Environment.getExternalStorageDirectory().toString();
-    final FolderStructure folderStructure = new FolderStructure();
+    final FolderStructure   folderStructure = new FolderStructure();
 
 
     @Override
@@ -50,6 +52,8 @@ public class Canvas extends Activity
         //------------------------------------
         // UI Settings
         //------------------------------------
+
+        // Canvas
         mPenBtn = (ImageView) findViewById(R.id.penBtn);
         mPenBtn.setOnClickListener(mBtnClickListener);
         mEraserBtn = (ImageView) findViewById(R.id.eraserBtn);
@@ -63,7 +67,11 @@ public class Canvas extends Activity
         //------------------------------------
         mCanvasContainer = (FrameLayout) findViewById(R.id.canvas);
         mSCanvas = new SCanvasView(mContext);
+
         mCanvasContainer.addView(mSCanvas);
+
+
+
 
         //------------------------------------
         // SettingView Setting
@@ -130,7 +138,7 @@ public class Canvas extends Activity
     public void onWindowFocusChanged(boolean hasFocus)
     {
         super.onWindowFocusChanged(hasFocus);
-        Toast.makeText(getBaseContext(), "Window has focus", Toast.LENGTH_SHORT).show();
+        //Toast.makeText(getBaseContext(), "Window has focus", Toast.LENGTH_SHORT).show();
         if(hasFocus)
         {
             //shellCmd("test2"); // Take a picture of the background
