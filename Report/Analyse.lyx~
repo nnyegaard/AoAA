@@ -25,7 +25,6 @@
 \bibtex_command default
 \index_command default
 \paperfontsize default
-\spacing onehalf
 \use_hyperref false
 \papersize default
 \use_geometry false
@@ -45,12 +44,12 @@
 \end_index
 \secnumdepth 3
 \tocdepth 3
-\paragraph_separation skip
-\defskip smallskip
+\paragraph_separation indent
+\paragraph_indentation default
 \quotes_language english
 \papercolumns 1
 \papersides 1
-\paperpagestyle fancy
+\paperpagestyle default
 \tracking_changes false
 \output_changes false
 \html_math_output 0
@@ -62,10 +61,6 @@
 
 \begin_layout Section
 Analyse
-\end_layout
-
-\begin_layout Standard
-<Resume af afsnitet>
 \end_layout
 
 \begin_layout Subsection
@@ -87,8 +82,6 @@ e med, som fx.
 \end_layout
 
 \begin_layout Standard
-\noindent
-\align left
 En applikation består normalt af flere aktiviteter, som er løst forbundet
  sammen.
  Typisk vil en aktivitet blive sat som 
@@ -123,8 +116,6 @@ last in, first out
 \end_layout
 
 \begin_layout Standard
-\noindent
-\align left
 De forskellige skift mellem aktiviteter forgå via.
  notificationer som er implementeret i en aktivitets callback metoder.
  De forskellige callback metoder kan ses i figure Activity life cyle.
@@ -135,7 +126,7 @@ De forskellige skift mellem aktiviteter forgå via.
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -151,7 +142,7 @@ status collapsed
 \begin_inset Caption
 
 \begin_layout Plain Layout
-Activity life cycle
+Activity life cyle
 \end_layout
 
 \end_inset
@@ -170,80 +161,6 @@ Activity life cycle
 
 \begin_layout Subsubsection
 Fragments
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset Graphics
-	filename img/fragments.png
-	scale 80
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption
-
-\begin_layout Plain Layout
-Fragment illustration
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\begin_inset Graphics
-	filename img/fragment_lifecycle.png
-	scale 80
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption
-
-\begin_layout Plain Layout
-Fragment life cycle
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
