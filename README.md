@@ -1,3 +1,1 @@
 AoAA --- Android overlay Annotation App
-
-More to come...
